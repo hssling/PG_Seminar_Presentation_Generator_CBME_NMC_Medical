@@ -1,0 +1,24 @@
+{
+  "name": "pg-seminar-presentation-generator",
+  "version": "1.0.0",
+  "description": "An automated tool for generating high-quality seminar presentations for postgraduate medical students, specifically designed for CBME (Competency-Based Medical Education) curriculum under NMC (National Medical Commission) guidelines.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hssling/PG_Seminar_Presentation_Generator_CBME_NMC_Medical.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hssling/PG_Seminar_Presentation_Generator_CBME_NMC_Medical/issues"
+  },
+  "homepage": "https://github.com/hssling/PG_Seminar_Presentation_Generator_CBME_NMC_Medical#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

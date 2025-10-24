@@ -1,0 +1,43 @@
+=== FIX MCP SERVER ISSUE ===
+
+PROBLEM: Streamlit app shows "MCP Server needs to be built"
+
+SOLUTION: Build the MCP server in the seminar-generator directory
+
+STEP 1: Navigate to seminar-generator directory
+-------------------------------------------
+Open Command Prompt and run:
+cd seminar-generator
+
+STEP 2: Install dependencies
+---------------------------
+npm install
+
+STEP 3: Build the MCP server
+---------------------------
+npm run build
+
+STEP 4: Verify success
+---------------------
+Check if build/index.js exists in seminar-generator directory
+
+STEP 5: Restart Streamlit server
+-------------------------------
+streamlit run ../streamlit_app.py --server.port 8501 --server.address 0.0.0.0
+
+ALTERNATIVE: Use the build script
+--------------------------------
+Double-click: build-mcp.bat
+
+WHAT THIS FIXES:
+- Streamlit app will show "MCP Server is built and ready"
+- Presentation generation will work properly
+- Android app will connect successfully
+- All features will be functional
+
+TROUBLESHOOTING:
+- Make sure Node.js is installed
+- Run commands in the seminar-generator directory
+- Check that package.json exists in seminar-generator
+
+After building, your entire system will be fully functional!

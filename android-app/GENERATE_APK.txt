@@ -1,0 +1,57 @@
+=== PG Seminar Presentation Generator - Android APK Generation ===
+
+Your Android app is ready! Follow these steps to generate the APK file:
+
+STEP 1: Open Command Prompt in android-app directory
+----------------------------------------------------
+1. Open File Explorer
+2. Navigate to: D:\PG Seminar Presentation Generator\android-app
+3. Shift + Right-click in empty space
+4. Select "Open command window here" or "Open PowerShell window here"
+
+STEP 2: Build the APK
+---------------------
+For testing/sideload distribution (recommended for now):
+gradlew.bat assembleDebug
+
+For Google Play Store distribution:
+gradlew.bat assembleRelease
+
+STEP 3: Find your APK
+--------------------
+Debug APK (for testing): app/build/outputs/apk/debug/app-debug.apk
+Release APK (for store): app/build/outputs/apk/release/app-release.apk
+
+STEP 4: Install on Device
+------------------------
+For Debug APK:
+1. Connect Android device via USB
+2. Enable "USB Debugging" in Developer Options
+3. Run: gradlew.bat installDebug
+
+For manual installation:
+1. Transfer APK file to Android device
+2. Go to Settings > Security > Install from Unknown Sources (enable)
+3. Use file manager to find and install the APK
+
+ALTERNATIVE: Use Android Studio
+-------------------------------
+1. Open Android Studio
+2. File > Open > Select android-app directory
+3. Wait for Gradle sync
+4. Run > Run 'app' (builds and installs automatically)
+
+NETWORK CONFIGURATION
+--------------------
+Your app is configured to connect to: http://192.168.31.144:8501
+Make sure:
+- Streamlit server is running
+- Android device is on same network as development machine
+- For emulators: use 10.0.2.2 instead of localhost
+
+APK DISTRIBUTION
+----------------
+Debug APK: Perfect for testing and direct distribution to colleagues
+Release APK: Required for Google Play Store (needs signing configuration)
+
+The APK will provide a native Android experience for your PG Seminar Presentation Generator!

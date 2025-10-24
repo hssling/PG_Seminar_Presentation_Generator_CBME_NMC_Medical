@@ -100,11 +100,12 @@ else:
 
 # MCP Server status
 st.header("MCP Server Status")
-if os.path.exists('seminar-generator/build/index.js'):
-    st.success("MCP Server is built and ready")
-    st.info("To use the MCP server, run: cd seminar-generator && npm start")
+if os.path.exists('seminar-generator/mcp_server.py'):
+    st.success("Python MCP Server is ready")
+    st.info("To use the MCP server, run: python seminar-generator/mcp_server.py")
+    st.info("The server provides the same functionality as the TypeScript version but in pure Python")
 else:
-    st.warning("MCP Server needs to be built. Run: cd seminar-generator && npm run build")
+    st.warning("MCP Server file not found. Make sure mcp_server.py exists in seminar-generator directory")
 
 st.markdown("---")
 st.markdown("Built for CBME NMC Medical Education | Evidence-based content with research integration")

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PG Seminar Presentation Generator</string>
+    <string name="loading">Loading presentation generator...</string>
+    <string name="error_loading">Error loading application</string>
+    <string name="retry">Retry</string>
+    <string name="exit">Exit</string>
+</resources>

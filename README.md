@@ -7,7 +7,7 @@ An automated tool for generating high-quality seminar presentations for postgrad
 - **Automated Research**: Fetches data from Wikipedia and PubMed for evidence-based content
 - **Multiple Presentation Levels**: Basic, detailed, comprehensive, and high-quality versions
 - **Visualization Assets**: Generates charts and diagrams for data representation
-- **MCP Server Integration**: Node.js-based server for automated generation
+- **MCP Server Integration**: Python-based server for automated generation
 - **Streamlit Web App**: User-friendly web interface for easy access
 - **CI/CD Pipeline**: Automated testing and deployment via GitHub Actions
 
@@ -21,11 +21,15 @@ PG Seminar Presentation Generator/
 ├── generate_presentation_final.py    # High-quality version with Lancet integration
 ├── generate_presentation_lancet.py   # Version with Lancet Commission findings
 ├── generate_visualizations.py        # Visualization assets generator
-├── seminar-generator/                # MCP server for automated generation
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── src/
-│       └── index.ts
+├── seminar-generator/                # Python MCP server for automated generation
+│   ├── mcp_server.py                # Python MCP server implementation
+│   ├── build-mcp.bat                # Windows build script
+│   └── FIX_MCP_SERVER.txt           # Setup instructions
+├── android-app/                      # Android WebView application
+│   ├── app/                         # Android app source code
+│   ├── build.gradle                 # Project configuration
+│   ├── gradlew.bat                  # Windows build script
+│   └── GENERATE_APK.txt             # APK generation instructions
 ├── streamlit_app.py                  # Web application
 ├── requirements.txt                  # Python dependencies
 └── README.md
@@ -36,7 +40,6 @@ PG Seminar Presentation Generator/
 ### Prerequisites
 
 - Python 3.8+
-- Node.js 16+
 - Git
 
 ### Setup
@@ -52,11 +55,18 @@ cd PG_Seminar_Presentation_Generator_CBME_NMC_Medical
 pip install -r requirements.txt
 ```
 
-3. Install Node.js dependencies for MCP server:
+3. (Optional) Build the Python MCP server:
 ```bash
 cd seminar-generator
-npm install
-npm run build
+python mcp_server.py
+```
+Or use the automated script:
+```bash
+# Windows
+build-mcp.bat
+
+# Linux/Mac
+chmod +x build-mcp.sh && ./build-mcp.sh
 ```
 
 ## Usage
@@ -84,16 +94,20 @@ python generate_visualizations.py
 
 ### MCP Server
 
-The MCP server provides automated generation:
+The Python MCP server provides automated generation:
 
 ```bash
 # Start the MCP server
-cd seminar-generator
-npm start
+python seminar-generator/mcp_server.py
 
-# Use the tool (via MCP client)
-generate_seminar_materials --topic "Social and Cultural Determinants of Health and Disease" --slides 25
+# Or use the build script
+cd seminar-generator
+./build-mcp.bat  # Windows
+# or
+chmod +x build-mcp.sh && ./build-mcp.sh  # Linux/Mac
 ```
+
+The server provides the same functionality as the TypeScript version but in pure Python, eliminating Node.js dependencies.
 
 ### Streamlit Web App
 
